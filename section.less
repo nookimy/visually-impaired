@@ -1,0 +1,104 @@
+.wrap {
+  .container();
+}
+
+/*Версия для слабовидящих*/
+
+
+.visually-impaired__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+
+  width: 100%;
+  max-width: 285px;
+  border: 1px solid;
+  padding: 5px 10px;
+  background-color: transparent;
+
+  @media (min-width: @lg-width) {
+    width: auto;
+    max-width: unset;
+  }
+
+  & .icon {
+    width: 25px;
+    height: 25px;
+    &__eye {
+      fill: @dark;
+    }
+
+    &__eye-crossed {
+      stroke: @dark;
+    }
+
+    &__eye-crossed-shadow {
+      stroke: @light;
+    }
+
+    &__eye-crossed,
+    &__eye-crossed-shadow {
+      display: none;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
+    background-color: #0056b3;
+    color: @light;
+
+    & .icon {
+      &__eye {
+        fill: @light;
+      }
+
+      &__eye-crossed {
+        stroke: @light;
+      }
+
+      &__eye-crossed-shadow {
+        stroke: #0056b3;
+      }
+    }
+  }
+
+  & .text {
+    flex-grow: 1;
+    text-align: center;
+
+    @media (min-width: @lg-width) {
+      display: none;
+    }
+
+    &--eye-crossed {
+      display: none;
+    }
+  }
+
+  &--eye-crossed {
+    & .icon {
+      &__eye-crossed,
+      &__eye-crossed-shadow {
+        display: block;
+      }
+    }
+
+    & .text {
+      &--eye {
+        display: none;
+      }
+
+      &--eye-crossed {
+        display: block;
+
+        @media (min-width: @lg-width) {
+          display: none;
+        }
+      }
+    }
+  }
+
+}

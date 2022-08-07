@@ -1,0 +1,165 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+body {
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #ffffff;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+/*Экстрамалые девайсы («телефоны», < 576px)*/
+/*Средние девайсы («таблетки», >= 768px)*/
+/*Большие девайсы (десктопы, >= 992px)*/
+/*Экстрабольшие девайсы (большие десктопы, >= 1200px)*/
+/*Цвет фона страницы*/
+/*Цвет цвет текста*/
+/*Цвет шапки*/
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat Light"), local("Montserrat-Light"), url("../fonts/montserrat-light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/montserrat-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("../fonts/montserrat-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+.wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/*Версия для слабовидящих*/
+.visually-impaired__btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 5px;
+  width: 100%;
+  max-width: 285px;
+  border: 1px solid;
+  padding: 5px 10px;
+  background-color: transparent;
+}
+@media (min-width: 992px) {
+  .visually-impaired__btn {
+    width: auto;
+    max-width: unset;
+  }
+}
+.visually-impaired__btn .icon {
+  width: 25px;
+  height: 25px;
+}
+.visually-impaired__btn .icon__eye {
+  fill: #000000;
+}
+.visually-impaired__btn .icon__eye-crossed {
+  stroke: #000000;
+}
+.visually-impaired__btn .icon__eye-crossed-shadow {
+  stroke: #ffffff;
+}
+.visually-impaired__btn .icon__eye-crossed,
+.visually-impaired__btn .icon__eye-crossed-shadow {
+  display: none;
+}
+.visually-impaired__btn:hover,
+.visually-impaired__btn:focus,
+.visually-impaired__btn:active {
+  cursor: pointer;
+  background-color: #0056b3;
+  color: #ffffff;
+}
+.visually-impaired__btn:hover .icon__eye,
+.visually-impaired__btn:focus .icon__eye,
+.visually-impaired__btn:active .icon__eye {
+  fill: #ffffff;
+}
+.visually-impaired__btn:hover .icon__eye-crossed,
+.visually-impaired__btn:focus .icon__eye-crossed,
+.visually-impaired__btn:active .icon__eye-crossed {
+  stroke: #ffffff;
+}
+.visually-impaired__btn:hover .icon__eye-crossed-shadow,
+.visually-impaired__btn:focus .icon__eye-crossed-shadow,
+.visually-impaired__btn:active .icon__eye-crossed-shadow {
+  stroke: #0056b3;
+}
+.visually-impaired__btn .text {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .visually-impaired__btn .text {
+    display: none;
+  }
+}
+.visually-impaired__btn .text--eye-crossed {
+  display: none;
+}
+.visually-impaired__btn--eye-crossed .icon__eye-crossed,
+.visually-impaired__btn--eye-crossed .icon__eye-crossed-shadow {
+  display: block;
+}
+.visually-impaired__btn--eye-crossed .text--eye {
+  display: none;
+}
+.visually-impaired__btn--eye-crossed .text--eye-crossed {
+  display: block;
+}
+@media (min-width: 992px) {
+  .visually-impaired__btn--eye-crossed .text--eye-crossed {
+    display: none;
+  }
+}
